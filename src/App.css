@@ -1,38 +1,253 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.layout{
+  background-color: #252525;
+  color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  padding: 50px;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+/* Gradient bagian atas dengan warna yang diinginkan */
+.gradient-top {
+  position: relative;
+  width: 100%;
+  height: 100px; /* Sesuaikan tinggi gradient */
+  background: linear-gradient(to bottom, #f86bdf, rgba(107, 107, 248, 0.8));
+  filter: blur(70px); /* Menambah blur jika diinginkan */
+  opacity: 0.3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Gradient bagian bawah dengan warna yang diinginkan */
+.gradient-bottom {
+  position: relative;
+  width: 100%;
+  height: 100px; /* Sesuaikan tinggi gradient */
+  background: linear-gradient(to top, #f86bdf, rgba(107, 107, 248, 0.8));
+  filter: blur(70px); /* Menambah blur jika diinginkan */
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly lower */
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in place */
+  }
+}
+
+.main-title {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  align-items: flex-start; /* Center align the text */
+  animation: fadeInUp 1s ease forwards; /* Apply animation */
+}
+
+.name-title{
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.title-desc{
+  font-size: 50px;
+  opacity: 0; /* Hide by default */
+  animation: fadeInUp 1s ease forwards; /* Apply animation */
+  animation-delay: 0.5s; /* Delay for the description */
+}
+
+.title-desc:nth-of-type(2) {
+  animation-delay: 1s; /* Additional delay for second description */
+}
+
+.about-n-capabilities{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.submenu {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.submenu-item {
+  position: relative;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.submenu-item::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.submenu-item:hover::after {
+  width: 100%; /* Show the underline on hover */
+}
+
+.submenu-item.active {
+  color: #f86bdf;
+}
+
+.submenu-item.active::after {
+  background-color: #f86bdf;
+  width: 100%; /* Keep the underline visible for the active item */
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 50px;
+  margin-top: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.portfolio-item {
+  text-align: center;
+  cursor: pointer;
+}
+
+.portfolio-item img{
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item img:hover{
+  transform: scale(1.1);
+}
+
+.item-title {
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.item-desc {
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.about-desc {
+  font-size: 30px;
+}
+
+.title {
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  position: relative;
+}
+
+.about-container {
+  flex: 2;
+}
+
+.capabilities-container {
+  flex: 1;
+}
+
+.about-container {
+  border-right: 1px solid #ffffff;
+}
+
+.capabilities-container {
+  padding-left: 20px;
+}
+
+.capabilities-list {
+  list-style: none;
+  padding: 0;
+}
+
+.capability-item {
+  font-size: 30px;
+  margin: 15px 0;
+  position: relative;
+  padding: 5px;
+  transition: transform 0.3s, color 0.3s;
+  cursor: default;
+}
+
+.capability-item:hover {
+  transform: scale(1.05);
+  color: #f86bdf; /* Change color on hover */
+}
+
+@media(max-width: 480px){
+  .layout {
+    padding: 50px 25px;
+  }
+  .name-title {
+    font-size: 50px;
+  }
+
+  .title-desc {
+    font-size: 30px;
+    margin-top: 40px;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .submenu-item {
+    font-size: 20px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .item-title{
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .about-n-capabilities {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .about-container {
+    border-right: none;
+  }
+
+  .capabilities-container {
+    padding-left: 0px;
+    margin-top: 50px;
+  }
+
+  .about-desc {
+    font-size: 20px;
+    text-align: justify;
+  }
+
+  .capability-item {
+    font-size: 20px;
+    padding: 0px;
   }
 }
