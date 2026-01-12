@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/nevan-portfolio/static/css/main.6ce03bbc.css",
+    "main.js": "/nevan-portfolio/static/js/main.fe007c49.js",
+    "static/js/453.f361e7ff.chunk.js": "/nevan-portfolio/static/js/453.f361e7ff.chunk.js",
+    "static/media/10. lms.jpg": "/nevan-portfolio/static/media/10. lms.2a3ee7e88f80ba1a47fe.jpg",
+    "static/media/5. doto 2.jpg": "/nevan-portfolio/static/media/5. doto 2.bd0170127694d392ba6b.jpg",
+    "static/media/9. hayoke-web.jpg": "/nevan-portfolio/static/media/9. hayoke-web.8062b109919cee98c37d.jpg",
+    "static/media/14. bmc.jpg": "/nevan-portfolio/static/media/14. bmc.9e3211cb28152e73b8e7.jpg",
+    "static/media/7. calm.jpg": "/nevan-portfolio/static/media/7. calm.0dae335d1cbcdb9dea43.jpg",
+    "static/media/8. allgadget.jpg": "/nevan-portfolio/static/media/8. allgadget.bfc9a4d66b62ec025cc1.jpg",
+    "static/media/13. spectrum.jpg": "/nevan-portfolio/static/media/13. spectrum.c2326d899b607fefe6c0.jpg",
+    "static/media/11. bas.jpg": "/nevan-portfolio/static/media/11. bas.45dc467fd74a5a68864c.jpg",
+    "static/media/3. homework time.jpg": "/nevan-portfolio/static/media/3. homework time.c855e83a6267b223ebe2.jpg",
+    "static/media/12. comum.jpg": "/nevan-portfolio/static/media/12. comum.a4ee690279b001ee8796.jpg",
+    "static/media/4. movielist.jpg": "/nevan-portfolio/static/media/4. movielist.831ac4f086e5ba7c3253.jpg",
+    "static/media/2. diet tracker.jpg": "/nevan-portfolio/static/media/2. diet tracker.413e2e58040cf6a96133.jpg",
+    "static/media/6. ourtrip.jpg": "/nevan-portfolio/static/media/6. ourtrip.2c147ccfd304748780f3.jpg",
+    "static/media/1. hospital search.jpg": "/nevan-portfolio/static/media/1. hospital search.0282dc20f19dd171afbd.jpg",
+    "index.html": "/nevan-portfolio/index.html",
+    "main.6ce03bbc.css.map": "/nevan-portfolio/static/css/main.6ce03bbc.css.map",
+    "main.fe007c49.js.map": "/nevan-portfolio/static/js/main.fe007c49.js.map",
+    "453.f361e7ff.chunk.js.map": "/nevan-portfolio/static/js/453.f361e7ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ce03bbc.css",
+    "static/js/main.fe007c49.js"
+  ]
+}
