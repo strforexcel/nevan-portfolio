@@ -6,8 +6,25 @@ function App() {
   // State for the selected category filter
   const [selectedCategory, setSelectedCategory] = useState("Website");
 
+  const phoneNumber = "6281996200002"; // use country code, no +
+  const email = "marshelim.nevan@gmail.com";
+
+  const whatsappMessage = encodeURIComponent(
+    "Hi Nevan, I'm interested in working together."
+  );
+
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+  const emailUrl = `mailto:${email}?subject=Project%20Inquiry`;
+
+  const sortedItems = [...portfolioItems].sort((a, b) => {
+    const yearDiff = Number(b.year) - Number(a.year);
+    if (yearDiff !== 0) return yearDiff;
+
+    return b.id - a.id; // newer ID first
+  });
+
   // Filtered portfolio items based on the selected category
-  const filteredItems = portfolioItems.filter((item) => {
+  const filteredItems = [...sortedItems].filter((item) => {
     return item.category === selectedCategory; // Show filtered items
   });
 
@@ -31,7 +48,7 @@ function App() {
             Computer Science Graduate from BINUS University
           </div>
           <div className="title-desc">
-            Formerly specializing in Interactive Multimedia
+            Specializing in Interactive Multimedia
           </div>
         </div>
         <div className="works">
@@ -60,8 +77,9 @@ function App() {
               >
                 <div key={item.id} className="portfolio-item">
                   <img src={item.image} alt={item.title} />
-                  <div className="item-title">{item.title}</div>
-                  <div className="item-desc">{item.desc}</div>
+                  <h1 className="item-title">{item.title}</h1>
+                  <p className="item-year">{item.year}</p>
+                  {item.desc && <h4 className="item-desc">{item.desc}</h4>}
                 </div>
               </a>
             ))}
@@ -70,14 +88,20 @@ function App() {
         <div className="about-n-capabilities">
           <div className="about-container">
             <div className="title">About me</div>
-            <div className="about-desc">
-              Hello, I'm Nevan Marshelim, a passionate Computer Science graduate
-              specializing in Multimedia. With two years of experience in a
-              student organization that honed my teamwork and communication
-              skills, I also bring one year of practical experience in ReactJS
-              as an intern. I thrive in collaborative environments and am eager
-              to apply my skills in innovative projects.
-            </div>
+            <h2 className="about-desc">
+              I have around three years of hands-on experience in frontend
+              development, starting with a ReactJS internship where I worked on
+              real-world applications and user-focused interfaces. I further
+              strengthened my skills by independently developing a full
+              application as part of my final university project.
+              <br />
+              <br />
+              Currently, I work as a Web Developer, building and maintaining web
+              applications using ReactJS, Next.js, and the MERN stack. Through
+              this journey, I’ve grown from a frontend-focused developer into a
+              more well-rounded web developer, with a strong emphasis on clean
+              UI, usability, and maintainable code.
+            </h2>
           </div>
           <div className="capabilities-container">
             <div className="title">My Capabilities</div>
@@ -90,6 +114,37 @@ function App() {
             </ul>
           </div>
         </div>
+        <footer className="footer">
+          <div className="footer-container">
+            <div className="footer-text">
+              <h3>Get in Touch</h3>
+              <p>
+                Interested in working together or have something in mind?
+                <br />
+                Feel free to reach out anytime.
+              </p>
+            </div>
+
+            <div className="footer-actions">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-button"
+              >
+                WhatsApp
+              </a>
+
+              <a href={emailUrl} className="footer-button">
+                Email
+              </a>
+            </div>
+
+            <small className="footer-note">
+              Let’s build something meaningful.
+            </small>
+          </div>
+        </footer>
         <div className="gradient-bottom"></div>
       </div>
     </>

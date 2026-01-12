@@ -142,16 +142,25 @@ a {
 .item-title {
   font-weight: bold;
   font-size: 25px;
-  margin-top: 20px;
+  margin:  20px 0 5px 0;
+}
+
+.item-year {
+  font-style: italic;
+  margin: 0;
+  font-weight: 400;
 }
 
 .item-desc {
   font-style: italic;
   margin-top: 5px;
+  font-weight: 400;
 }
 
 .about-desc {
-  font-size: 30px;
+  font-weight: 400;
+  padding-right: 20px;
+  text-align: justify;
 }
 
 .title {
@@ -183,7 +192,7 @@ a {
 }
 
 .capability-item {
-  font-size: 30px;
+  font-size: 1.5rem;
   margin: 15px 0;
   position: relative;
   padding: 5px;
@@ -194,6 +203,59 @@ a {
 .capability-item:hover {
   transform: scale(1.05);
   color: #f86bdf; /* Change color on hover */
+}
+
+.footer {
+  width: 100%;
+  margin-top: 6rem;
+  /* padding: 3rem 1.5rem; */
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-text h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.footer-text p {
+  margin-top: 0.5rem;
+  max-width: 28rem;
+  line-height: 1.6;
+}
+
+.footer-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.footer-button:hover {
+  background-color: #e5e5e5;
+  color: #000000;
+}
+
+.footer-note {
+  font-size: 0.85rem;
 }
 
 @media(max-width: 480px){
